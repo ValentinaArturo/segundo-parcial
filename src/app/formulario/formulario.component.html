@@ -1,0 +1,14 @@
+<h1>Enviar datos</h1>
+<br><br>
+<form #formulario="ngForm" (ngSubmit)="formularioEnviado()">
+    <input type="number" name="id" placeholder="id" [(ngModel)]="formularioModel.id">
+    <br><br>
+    <input type="text" name="nombre" placeholder="nombre" [(ngModel)]="formularioModel.nombre">
+    <br><br>
+    <input type="number" name="edad" placeholder="Edad" [(ngModel)]="formularioModel.edad">
+    <br><br>
+    <button type="submit">Enviar</button>
+</form>
+
+<h2>Depurando:</h2>
+{{ formularioModel | json }}
