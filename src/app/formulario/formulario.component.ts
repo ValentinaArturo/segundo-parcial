@@ -15,15 +15,26 @@ export class FormularioComponent implements OnInit {
   ngOnInit() { }
 
   formularioEnviado() {
-    this.httpClient.post('http://localhost:8081/wsTest11/rest/enviarDatos', Formulario).subscribe(data => console.log(JSON.stringify(data),),);
+
+
+    let jsonObj = {
+                    "idPlatformOrigin": this.formularioModel.idPlatformOrigin,
+                    "idCoin": this.formularioModel.idCoin,
+                    "idPlatformDestiny": this.formularioModel.idPlatformDestiny,
+                    "idProduct": this.formularioModel.idProduct,
+                    "mount": this.formularioModel.mount,
+                    "quantity": this.formularioModel.quantity };
+
+    this.httpClient.post('http://localhost:8081/wsTest12/rest/enviarDatos', jsonObj).subscribe(data => console.log(JSON.stringify(data),),);
 
     console.log("El formulario fue enviado y los datos son : ", this.formularioModel)
     alert("Enviado");
   }
   formularioRemovido() {
-    this.httpClient.get<Formulario>('http://localhost:8081/wsTest11/rest/datosPlataforma');
-    console.log("El formulario fue removiod y los datos son : ", this.formularioModel)
+
+    this.httpClient.get('http://localhost:8081/wsTest12/rest/datosPlataforma').subscribe();
+
+    console.log("El formulario fue removido y los datos son : ", this.formularioModel)
     alert("Removido");
   }
-
 }

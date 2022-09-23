@@ -1,17 +1,19 @@
 <h1>Enviar datos</h1>
 <br><br>
 <form #formulario="ngForm" (ngSubmit)="formularioEnviado()">
-    <input type="number" name="Id Platform Origin" placeholder="Id Platform Origin" [(ngModel)]="formularioModel.idPlatformOrigin">
+    Id Platform Origin <input type="number" name="Id Platform Origin" placeholder="Id Platform Origin"
+        [(ngModel)]="formularioModel.idPlatformOrigin">
     <br><br>
-    <input type="number" name="Id coin" placeholder="Id coin" [(ngModel)]="formularioModel.idCoin">
+    Id coin <input type="number" name="Id coin" placeholder="Id coin" [(ngModel)]="formularioModel.idCoin">
     <br><br>
-    <input type="number" name="Id Platform Destiny" placeholder="Id Platform Destiny" [(ngModel)]="formularioModel.idPlatformDestiny">
+    Id Platform Destiny<input type="number" name="Id Platform Destiny" placeholder="Id Platform Destiny"
+        [(ngModel)]="formularioModel.idPlatformDestiny">
     <br><br>
-    <input type="number" name="Id Product" placeholder="Id Product" [(ngModel)]="formularioModel.idProduct">
+    Id Produc<input type="number" name="Id Product" placeholder="Id Product" [(ngModel)]="formularioModel.idProduct">
     <br><br>
-    <input type="number" name="Mount" placeholder="Mount" [(ngModel)]="formularioModel.mount">
+    Mount<input type="number" name="Mount" placeholder="Mount" [(ngModel)]="formularioModel.mount">
     <br><br>
-    <input type="number" name="Quantity" placeholder="Quantity" [(ngModel)]="formularioModel.quantity">
+    Quantity<input type="number" name="Quantity" placeholder="Quantity" [(ngModel)]="formularioModel.quantity">
     <br><br>
     <button type="submit">Enviar Data</button>
     <br><br>
