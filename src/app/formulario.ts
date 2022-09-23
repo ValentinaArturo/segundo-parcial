@@ -1,7 +1,10 @@
 export class Formulario {
     constructor(
-          public id: number,
-          public nombre: string,
-          public edad: number
+          public idPlatformOrigin: number,
+          public idCoin: number,
+          public idPlatformDestiny: number,
+          public idProduct: number,
+          public mount: number,
+          public quantity: number
       ) { }
   }
