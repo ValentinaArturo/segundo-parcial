@@ -1,24 +1,51 @@
-<h1>Enviar datos</h1>
-<br><br>
-<form #formulario="ngForm" (ngSubmit)="formularioEnviado()">
-    Id Platform Origin <input type="number" name="Id Platform Origin" placeholder="Id Platform Origin"
+<style> 
+    input[type=number] {
+      width: 3%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: none;
+      border-bottom: 2px solid black;
+    }
+    body {
+  background-image: url('https://img.freepik.com/fotos-premium/fondo-claro-abstracto-formas-geometricas-poligonales_186380-1550.jpg?w=900');
+}
+    </style>
+
+<body>
+<h1 style="text-align: center; color:#3630a3;">Enviar datos</h1>
+<form #formulario="ngForm" (ngSubmit)="formularioEnviado()" style="text-align: center">
+    <label>Id Platform Origin:
+         <input type="number" name="Id Platform Origin" placeholder="Id Platform Origin"
         [(ngModel)]="formularioModel.idPlatformOrigin">
+    </label>
     <br><br>
-    Id coin <input type="number" name="Id coin" placeholder="Id coin" [(ngModel)]="formularioModel.idCoin">
+    <label>Id coin:
+         <input type="number" name="Id coin" placeholder="Id coin" [(ngModel)]="formularioModel.idCoin">
+    </label>
     <br><br>
-    Id Platform Destiny<input type="number" name="Id Platform Destiny" placeholder="Id Platform Destiny"
+    <label> Id Platform Destiny: 
+        <input type="number" name="Id Platform Destiny" placeholder="Id Platform Destiny"
         [(ngModel)]="formularioModel.idPlatformDestiny">
+    </label>
     <br><br>
-    Id Produc<input type="number" name="Id Product" placeholder="Id Product" [(ngModel)]="formularioModel.idProduct">
+    <label>Id Product:
+    <input type="number" name="Id Product" placeholder="Id Product" [(ngModel)]="formularioModel.idProduct">
+</label>
     <br><br>
-    Mount<input type="number" name="Mount" placeholder="Mount" [(ngModel)]="formularioModel.mount">
+    <label>Mount:
+    <input type="number" name="Mount" placeholder="Mount" [(ngModel)]="formularioModel.mount">
+    </label>
     <br><br>
-    Quantity<input type="number" name="Quantity" placeholder="Quantity" [(ngModel)]="formularioModel.quantity">
+    <label>Quantity:
+    <input type="number" name="Quantity" placeholder="Quantity" [(ngModel)]="formularioModel.quantity">
+    </label>
     <br><br>
-    <button type="submit">Enviar Data</button>
+    <button type="submit" style="background:#3630a3;color:white;">Enviar Data</button>
     <br><br>
-    <button type="button" (click)="formularioRemovido()">Remover</button>
+    <button type="button" (click)="formularioRemovido()" style="background: darkcyan;color:white;">Remover</button>
 </form>
 
-<h2>Depurando:</h2>
-{{ formularioModel | json }}
+<h2 style="text-align: center;color:#3630a3;">Depurando:</h2>
+<h2 style="text-align: center">{{ formularioModel | json }}</h2>
+</body>
