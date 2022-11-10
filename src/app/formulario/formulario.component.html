@@ -1,15 +1,12 @@
 <style> 
     input[type=number] {
-      width: 3%;
+      width: 5%;
       padding: 12px 20px;
       margin: 8px 0;
       box-sizing: border-box;
       border: none;
       border-bottom: 2px solid black;
     }
-    body {
-  background-image: url('https://img.freepik.com/fotos-premium/fondo-claro-abstracto-formas-geometricas-poligonales_186380-1550.jpg?w=900');
-}
     </style>
 
 <body>
@@ -41,9 +38,9 @@
     <input type="number" name="Quantity" placeholder="Quantity" [(ngModel)]="formularioModel.quantity">
     </label>
     <br><br>
-    <button type="submit" style="background:#3630a3;color:white;">Enviar Data</button>
+    <button type="submit" style="background:#3630a3;color:white;height:30px;width:200px">Enviar Data</button>
     <br><br>
-    <button type="button" (click)="formularioRemovido()" style="background: darkcyan;color:white;">Remover</button>
+    <button type="button" (click)="formularioRemovido()" style="background: darkcyan;color:white;height:30px;width:200px">Remover</button>
 </form>
 
 <h2 style="text-align: center;color:#3630a3;">Depurando:</h2>

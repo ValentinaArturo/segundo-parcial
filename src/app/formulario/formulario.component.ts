@@ -32,8 +32,7 @@ export class FormularioComponent implements OnInit {
   }
   formularioRemovido() {
 
-    this.httpClient.get('http://localhost:8081/wsTest12/rest/datosPlataforma').subscribe();
-
+    this.httpClient.get('http://localhost:8081/wsTest12/rest/datosPlataforma').subscribe(data => console.log(JSON.stringify(data),),);
     console.log("El formulario fue removido y los datos son : ", this.formularioModel)
     alert("Removido");
   }
