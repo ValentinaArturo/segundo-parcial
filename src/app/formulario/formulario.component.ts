@@ -8,8 +8,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ["./formulario.component.css"]
 })
 export class FormularioComponent implements OnInit {
-  formularioModel = new Formulario(0, 0, 0, 0, 0, 0,);
-
+  formularioModel = new Formulario(0, 0, 0, 0, 0, 0, '');
+  response:any;
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit() { }
@@ -18,22 +18,25 @@ export class FormularioComponent implements OnInit {
 
 
     let jsonObj = {
-                    "idPlatformOrigin": this.formularioModel.idPlatformOrigin,
-                    "idCoin": this.formularioModel.idCoin,
-                    "idPlatformDestiny": this.formularioModel.idPlatformDestiny,
-                    "idProduct": this.formularioModel.idProduct,
-                    "mount": this.formularioModel.mount,
-                    "quantity": this.formularioModel.quantity };
+      "idPlatformOrigin": this.formularioModel.idPlatformOrigin,
+      "idCoin": this.formularioModel.idCoin,
+      "idPlatformDestiny": this.formularioModel.idPlatformDestiny,
+      "idProduct": this.formularioModel.idProduct,
+      "mount": this.formularioModel.mount,
+      "quantity": this.formularioModel.quantity,
+      "servidor": null,
+    };
 
-    this.httpClient.post('http://localhost:8081/wsTest12/rest/enviarDatos', jsonObj).subscribe(data => console.log(JSON.stringify(data),),);
+    this.httpClient.post('http://172.17.0.2/final2/rest/enviarDatos', jsonObj).subscribe(data => console.log(JSON.stringify(data),),);
 
     console.log("El formulario fue enviado y los datos son : ", this.formularioModel)
     alert("Enviado");
   }
   formularioRemovido() {
 
-    this.httpClient.get('http://localhost:8081/wsTest12/rest/datosPlataforma').subscribe(data => console.log(JSON.stringify(data),),);
+    this.httpClient.get<Formulario>('http://172.17.0.2/final2/rest/datosPlataforma')
+    .subscribe({ next: data => this.response = data.servidor });
     console.log("El formulario fue removido y los datos son : ", this.formularioModel)
-    alert("Removido");
+    alert("Removido " + this.response);
   }
 }

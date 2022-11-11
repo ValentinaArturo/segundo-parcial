@@ -5,6 +5,7 @@ export class Formulario {
           public idPlatformDestiny: number,
           public idProduct: number,
           public mount: number,
-          public quantity: number
+          public quantity: number,
+          public servidor: string,
       ) { }
   }
